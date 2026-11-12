@@ -1,0 +1,59 @@
+package com.oidioomstudio.advancedenchant.client.gui.components;
+
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.world.item.ItemStack;
+
+public class ItemStackDisplayWidget extends AbstractWidget {
+    private static final net.minecraft.resources.Identifier SLOT_HIGHLIGHT_BACK_SPRITE = net.minecraft.resources.Identifier.withDefaultNamespace("container/slot_highlight_back");
+    private static final net.minecraft.resources.Identifier SLOT_HIGHLIGHT_FRONT_SPRITE = net.minecraft.resources.Identifier.withDefaultNamespace("container/slot_highlight_front");
+
+    private final Font font;
+    private final ItemStack itemStack;
+    private net.minecraft.client.gui.components.Tooltip currentTooltip;
+
+    public ItemStackDisplayWidget(int x, int y, Font font, ItemStack itemStack) {
+        super(x, y, 16, 16, CommonComponents.EMPTY);
+        this.font = font;
+        this.itemStack = itemStack;
+    }
+
+    @Override
+    public void setTooltip(net.minecraft.client.gui.components.Tooltip tooltip) {
+        super.setTooltip(tooltip);
+        this.currentTooltip = tooltip;
+    }
+
+    @Override
+    protected void extractWidgetRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+        if (this.hasHighlight()) {
+            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, SLOT_HIGHLIGHT_BACK_SPRITE, this.getX() - 4, this.getY() - 4, 24, 24);
+        }
+        guiGraphics.fakeItem(this.itemStack, this.getX(), this.getY());
+        int posX = this.getX() + 19 - 2 - this.font.width(this.getMessage());
+        int posY = this.getY() + 6 + 3;
+        guiGraphics.text(this.font, this.getMessage(), posX, posY, -1);
+        if (this.hasHighlight()) {
+            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, SLOT_HIGHLIGHT_FRONT_SPRITE, this.getX() - 4, this.getY() - 4, 24, 24);
+        }
+    }
+
+    private boolean hasHighlight() {
+        return this.isHoveredOrFocused() && this.currentTooltip != null;
+    }
+
+    @Override
+    public boolean mouseClicked(MouseButtonEvent mouseButtonEvent, boolean doubleClick) {
+        return false;
+    }
+
+    @Override
+    protected void updateWidgetNarration(NarrationElementOutput narrationElementOutput) {
+        this.defaultButtonNarrationText(narrationElementOutput);
+    }
+}

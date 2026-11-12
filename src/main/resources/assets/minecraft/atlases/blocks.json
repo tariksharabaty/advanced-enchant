@@ -1,0 +1,8 @@
+﻿{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "advancedenchant:entity/enchantment/enchanting_infuser_book"
+    }
+  ]
+}

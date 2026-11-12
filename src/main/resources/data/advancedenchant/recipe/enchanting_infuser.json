@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": "minecraft:gold_nugget",
+    "B": "minecraft:book",
+    "A": "minecraft:amethyst_shard",
+    "C": "minecraft:crying_obsidian",
+    "T": "minecraft:enchanting_table"
+  },
+  "pattern": [
+    "NBN",
+    "ACA",
+    "CTC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedenchant:enchanting_infuser"
+  }
+}

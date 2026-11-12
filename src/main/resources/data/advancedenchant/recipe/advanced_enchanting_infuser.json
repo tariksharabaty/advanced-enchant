@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:gold_block",
+    "B": "minecraft:book",
+    "A": "minecraft:amethyst_shard",
+    "C": "minecraft:crying_obsidian",
+    "T": "advancedenchant:enchanting_infuser"
+  },
+  "pattern": [
+    "GBG",
+    "ACA",
+    "CTC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "advancedenchant:advanced_enchanting_infuser"
+  }
+}

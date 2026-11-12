@@ -1,0 +1,6 @@
+﻿{
+  "model": {
+    "type": "minecraft:model",
+    "model": "advancedenchant:block/enchanting_infuser"
+  }
+}

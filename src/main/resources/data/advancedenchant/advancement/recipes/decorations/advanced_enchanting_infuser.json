@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gold_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gold_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_enchanting_infuser": {
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedenchant:enchanting_infuser"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "advancedenchant:advanced_enchanting_infuser"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gold_block",
+      "has_enchanting_infuser"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "advancedenchant:advanced_enchanting_infuser"
+    ]
+  }
+}

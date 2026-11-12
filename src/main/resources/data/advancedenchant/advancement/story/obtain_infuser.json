@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:story/enchant_item",
+  "display": {
+    "icon": {
+      "id": "advancedenchant:enchanting_infuser"
+    },
+    "title": {
+      "translate": "advancements.advancedenchant.story.obtain_infuser.title"
+    },
+    "description": {
+      "translate": "advancements.advancedenchant.story.obtain_infuser.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_infuser": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedenchant:enchanting_infuser"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_infuser"
+    ]
+  ]
+}

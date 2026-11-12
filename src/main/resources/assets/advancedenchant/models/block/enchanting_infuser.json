@@ -1,0 +1,9 @@
+﻿{
+  "parent": "minecraft:block/enchanting_table",
+  "textures": {
+    "bottom": "advancedenchant:block/enchanting_infuser_bottom",
+    "particle": "advancedenchant:block/enchanting_infuser_bottom",
+    "side": "advancedenchant:block/enchanting_infuser_side",
+    "top": "advancedenchant:block/enchanting_infuser_top"
+  }
+}

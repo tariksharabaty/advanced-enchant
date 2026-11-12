@@ -1,0 +1,35 @@
+{
+  "parent": "advancedenchant:story/obtain_infuser",
+  "display": {
+    "icon": {
+      "id": "advancedenchant:advanced_enchanting_infuser"
+    },
+    "title": {
+      "translate": "advancements.advancedenchant.story.obtain_advanced_infuser.title"
+    },
+    "description": {
+      "translate": "advancements.advancedenchant.story.obtain_advanced_infuser.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_advanced_infuser": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "advancedenchant:advanced_enchanting_infuser"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_advanced_infuser"
+    ]
+  ]
+}
